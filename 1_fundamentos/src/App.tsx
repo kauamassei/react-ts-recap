@@ -4,6 +4,7 @@ import Button from './components/Button'
 import Counter from './components/Counter'
 import Father from './components/Father'
 import FatherFunction from './components/FatherFunction'
+import Form from './components/Form'
 import PropsComponent from './components/Props'
 import UseInfoForm from './components/UseInfoForm'
 import Welcome from './components/Welcome'
@@ -20,6 +21,7 @@ function App() {
       <UseInfoForm />
       <Button />
       <FatherFunction />
+      <Form />
     </>
   )
 }
