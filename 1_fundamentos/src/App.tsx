@@ -1,5 +1,6 @@
 
 import './App.css'
+import Button from './components/Button'
 import Counter from './components/Counter'
 import Father from './components/Father'
 import PropsComponent from './components/Props'
@@ -16,6 +17,7 @@ function App() {
       <PropsComponent name='Kauã' idade={18} />
       <Counter />
       <UseInfoForm />
+      <Button />
     </>
   )
 }
