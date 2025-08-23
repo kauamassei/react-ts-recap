@@ -6,6 +6,7 @@ import Father from './components/Father'
 import FatherFunction from './components/FatherFunction'
 import Form from './components/Form'
 import PropsComponent from './components/Props'
+import RenderConditional from './components/RenderConditional'
 import UseInfoForm from './components/UseInfoForm'
 import Welcome from './components/Welcome'
 
@@ -22,6 +23,7 @@ function App() {
       <Button />
       <FatherFunction />
       <Form />
+      <RenderConditional user='Kaua' />
     </>
   )
 }
