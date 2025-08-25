@@ -5,6 +5,7 @@ import Counter from './components/Counter'
 import Father from './components/Father'
 import FatherFunction from './components/FatherFunction'
 import Form from './components/Form'
+import LoginButton from './components/LoginButton'
 import PropsComponent from './components/Props'
 import RenderConditional from './components/RenderConditional'
 import UseInfoForm from './components/UseInfoForm'
@@ -24,6 +25,8 @@ function App() {
       <FatherFunction />
       <Form />
       <RenderConditional user='Kaua' />
+      <LoginButton  isLoggedIn={true}/>
+      <LoginButton isLoggedIn={false} />
     </>
   )
 }
