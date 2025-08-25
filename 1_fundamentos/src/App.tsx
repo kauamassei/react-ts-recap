@@ -9,6 +9,7 @@ import LoginButton from './components/LoginButton'
 import PropsComponent from './components/Props'
 import RenderConditional from './components/RenderConditional'
 import UseInfoForm from './components/UseInfoForm'
+import Warning from './components/Warning'
 import Welcome from './components/Welcome'
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
       <RenderConditional user='Kaua' />
       <LoginButton  isLoggedIn={true}/>
       <LoginButton isLoggedIn={false} />
+      <Warning warning='aviso' />
     </>
   )
 }
