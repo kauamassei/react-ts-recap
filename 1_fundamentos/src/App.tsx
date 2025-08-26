@@ -2,6 +2,7 @@
 import './App.css'
 import Button from './components/Button'
 import Counter from './components/Counter'
+import ButtonCounter from './components/exercises/Counter'
 import Greeting from './components/exercises/Greeting'
 import Father from './components/Father'
 import FatherFunction from './components/FatherFunction'
@@ -33,6 +34,7 @@ function App() {
       <Warning warning='aviso' />
       <NumberList numbers={[1, 2, 3, 4, 5]} />
       <Greeting name='Kauã' />
+      <ButtonCounter />
     </>
   )
 }
