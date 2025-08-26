@@ -6,6 +6,7 @@ import Father from './components/Father'
 import FatherFunction from './components/FatherFunction'
 import Form from './components/Form'
 import LoginButton from './components/LoginButton'
+import NumberList from './components/NumberList'
 import PropsComponent from './components/Props'
 import RenderConditional from './components/RenderConditional'
 import UseInfoForm from './components/UseInfoForm'
@@ -29,6 +30,7 @@ function App() {
       <LoginButton  isLoggedIn={true}/>
       <LoginButton isLoggedIn={false} />
       <Warning warning='aviso' />
+      <NumberList numbers={[1, 2, 3, 4, 5]} />
     </>
   )
 }
