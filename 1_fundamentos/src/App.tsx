@@ -4,6 +4,7 @@ import Button from './components/Button'
 import Counter from './components/Counter'
 import ButtonCounter from './components/exercises/Counter'
 import Greeting from './components/exercises/Greeting'
+import TaskList from './components/exercises/TaskList'
 import Father from './components/Father'
 import FatherFunction from './components/FatherFunction'
 import Form from './components/Form'
@@ -35,6 +36,7 @@ function App() {
       <NumberList numbers={[1, 2, 3, 4, 5]} />
       <Greeting name='Kauã' />
       <ButtonCounter />
+      <TaskList item={[{id: 1, text: 'terminar o curso'}]} />
     </>
   )
 }
