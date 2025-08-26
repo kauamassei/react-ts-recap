@@ -2,6 +2,7 @@ interface NumberListProps {
     numbers: number[] ,
 }
 
+
 const NumberList = ({numbers}: NumberListProps) => {
   return (
     <>

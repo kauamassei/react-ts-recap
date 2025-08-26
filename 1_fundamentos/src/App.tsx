@@ -2,6 +2,7 @@
 import './App.css'
 import Button from './components/Button'
 import Counter from './components/Counter'
+import Greeting from './components/exercises/Greeting'
 import Father from './components/Father'
 import FatherFunction from './components/FatherFunction'
 import Form from './components/Form'
@@ -31,6 +32,7 @@ function App() {
       <LoginButton isLoggedIn={false} />
       <Warning warning='aviso' />
       <NumberList numbers={[1, 2, 3, 4, 5]} />
+      <Greeting name='Kauã' />
     </>
   )
 }
