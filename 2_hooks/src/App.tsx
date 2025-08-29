@@ -1,5 +1,6 @@
 
 import './App.css'
+import ComponenteFilho from './components/ChildComponent'
 import ValorDoContexto from './components/ContextValue'
 import ExampleUseEffect from './components/ExampleUseEffect'
 import Timer from './components/Timer'
@@ -13,6 +14,7 @@ function App() {
       <Timer />
       <MeuContextoProvider>
         <ValorDoContexto />
+        <ComponenteFilho />
       </MeuContextoProvider>
     </>
   )
