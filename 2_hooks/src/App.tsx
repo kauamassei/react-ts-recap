@@ -6,6 +6,7 @@ import DisplayWindowsSize from "./components/DisplayWindowsSize";
 import ExampleUseEffect from "./components/ExampleUseEffect";
 import ReducerComponent from "./components/ReducerComponent";
 import Timer from "./components/Timer";
+import UserProfile from "./components/UserProfile";
 import { MeuContextoProvider } from "./contexts/MyContext";
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
         <h1>Este é o título da secao</h1>
         <p>Este é o meu subtítulo</p>
       </Container>
+      <UserProfile userId={1} />
     </>
   );
 }
