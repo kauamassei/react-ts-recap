@@ -1,5 +1,6 @@
 import "./App.css";
 import ComponenteFilho from "./components/ChildComponent";
+import Container from "./components/Container";
 import ValorDoContexto from "./components/ContextValue";
 import DisplayWindowsSize from "./components/DisplayWindowsSize";
 import ExampleUseEffect from "./components/ExampleUseEffect";
@@ -18,6 +19,10 @@ function App() {
       </MeuContextoProvider>
       <ReducerComponent />
       <DisplayWindowsSize />
+      <Container>
+        <h1>Este é o título da secao</h1>
+        <p>Este é o meu subtítulo</p>
+      </Container>
     </>
   );
 }
