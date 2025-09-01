@@ -9,6 +9,7 @@ import Timer from "./components/Timer";
 import UserProfile from "./components/UserProfile";
 import { MeuContextoProvider } from "./contexts/MyContext";
 import UseEffectUser from "./exercises/UseEffectUser";
+import UserStaus from "./exercises/UserStaus";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
       </Container>
       <UserProfile userId={1} />
       <UseEffectUser name="Kauã" jobTitle="Desenvolvedor"/>
+      <UserStaus />
     </>
   );
 }
