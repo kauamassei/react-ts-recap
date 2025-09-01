@@ -4,11 +4,11 @@ interface User {
   id: number;
   name: string;
   email: string;
-  phone: string
+  phone: string;
 }
 
 interface UserProfileProps {
-    userId: number;
+  userId: number;
 }
 const UserProfile = ({ userId }: UserProfileProps) => {
   const [user, setUser] = useState<User | null>(null);
@@ -34,7 +34,9 @@ const UserProfile = ({ userId }: UserProfileProps) => {
       <div>
         {user ? (
           <div>
-            <p><strong>{user.name}</strong></p>
+            <p>
+              <strong>{user.name}</strong>
+            </p>
             <p>{user.email}</p>
             <p>{user.phone}</p>
           </div>
