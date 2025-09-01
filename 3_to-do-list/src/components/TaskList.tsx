@@ -1,9 +1,17 @@
-import React from 'react'
+import React from "react";
+import Task from "./Task";
 
 const TaskList = () => {
   return (
-    <div>TaskList</div>
-  )
-}
+    <>
+      <ul>
+        <Task />
+        <Task />
+        <Task />
+        <Task />
+      </ul>
+    </>
+  );
+};
 
-export default TaskList
+export default TaskList;

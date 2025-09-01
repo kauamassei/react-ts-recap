@@ -1,9 +1,14 @@
-import React from 'react'
+import React from "react";
 
 const Task = () => {
   return (
-    <div>Task</div>
-  )
-}
+    <>
+      <li>
+        <span>Texto da tarefa</span>
+        <button>Remover</button>
+      </li>
+    </>
+  );
+};
 
-export default Task
+export default Task;

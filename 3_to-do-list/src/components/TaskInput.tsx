@@ -1,9 +1,17 @@
-import React from 'react'
+import React from "react";
 
 const TaskInput = () => {
   return (
-    <div>TaskInput</div>
-  )
-}
+    <>
+      <div>
+        <input
+          type="text"
+          placeholder="Digite sua tarefa"
+        />
+        <button type="submit">Adicionar tarefa</button>
+      </div>
+    </>
+  );
+};
 
-export default TaskInput
+export default TaskInput;
