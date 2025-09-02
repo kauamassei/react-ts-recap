@@ -1,11 +1,19 @@
-import React from "react";
+interface TaskType {
+  id: number;
+  text: string;
+  done: boolean;
+}
 
-const Task = () => {
+interface TaskProps {
+  task: TaskType;
+  onDeleteTask: (taskId: number) => void;
+}
+const Task = ({ task, onDeleteTask }: TaskProps) => {
   return (
     <>
       <li>
-        <span>Texto da tarefa</span>
-        <button>Remover</button>
+        <span>{task.text}</span>
+        <button onClick={() => onDeleteTask(task.id)}>Remover</button>
       </li>
     </>
   );
