@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import TaskInput from "./components/TaskInput";
 import TaskList from "./components/TaskList";
 
@@ -9,10 +9,19 @@ interface Task {
 }
 
 function App() {
-  const [tasks, setTasks] = useState<Task[]>([]);
+  const [tasks, setTasks] = useState<Task[]>(() => {
+    const saved = localStorage.getItem("tasks");
+    return saved ? JSON.parse(saved) : [];
+  });
+  
+
+  useEffect(() => {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  }, [tasks]);
 
   const addTask = (task: string) => {
     setTasks([...tasks, { id: Date.now(), text: task, done: false }]);
+
   };
 
   const deleteTask = (taskId: number) => {
@@ -32,7 +41,11 @@ function App() {
       <div className="todocard">
         <h1>Lista de tarefas</h1>
         <TaskInput onAddTask={addTask} />
-        <TaskList tasks={tasks} onDeleteTask={deleteTask} onToggleTaskDone={toggleTaskDone} />
+        <TaskList
+          tasks={tasks}
+          onDeleteTask={deleteTask}
+          onToggleTaskDone={toggleTaskDone}
+        />
       </div>
     </>
   );
