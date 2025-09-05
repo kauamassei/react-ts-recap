@@ -3,6 +3,7 @@ import "./App.css";
 import Home from "./pages/Home";
 import Section from "./pages/Section";
 import Contact from "./pages/Contact";
+import Login from "./pages/Login";
 
 function App() {
   return (
@@ -22,6 +23,9 @@ function App() {
             className={({ isActive }) => (isActive ? "active-link" : "")}
             to="/contact"
           >Contact</NavLink>
+          <li>
+            <Link to="/login">Login</Link>
+          </li>
         </ul>
       </nav>
 
@@ -29,6 +33,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/section" element={<Section />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
     </>
   );
