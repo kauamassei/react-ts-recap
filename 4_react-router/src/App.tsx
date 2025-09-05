@@ -18,6 +18,10 @@ function App() {
           <li>
             <Link to="/contact">Contato</Link>
           </li>
+          <NavLink
+            className={({ isActive }) => (isActive ? "active-link" : "")}
+            to="/contact"
+          >Contact</NavLink>
         </ul>
       </nav>
 
