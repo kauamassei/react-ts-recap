@@ -7,6 +7,7 @@ import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 import Profile from "./pages/Profile";
 import Settings from "./pages/Settings";
+import TaskDetails from "./pages/TaskDetails";
 
 function App() {
   return (
@@ -35,13 +36,22 @@ function App() {
             <Link to="/dashboard">Dashboard</Link>
           </li>
         </ul>
+        <div>
+          <Link to="/tasks/1">Tarefa 1</Link>
+          <Link to="/tasks/2">Tarefa 2</Link>
+          <Link to="/tasks/3">Tarefa 3</Link>
+        </div>
       </nav>
 
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/section" element={<Section />} />
         <Route path="/contact" element={<Contact />} />
+        {/*Rotas aninhadas*/}
         <Route path="/login" element={<Login />} />
+        {/*Rotas dinâmicas*/}
+        <Route path="/tasks/:taskId" element={<TaskDetails />} />
+        {/*Rotas aninhadas*/}
         <Route path="/dashboard" element={<Dashboard />}>
           <Route path="profile" element={<Profile />} />
           <Route path="settings" element={<Settings />} />
