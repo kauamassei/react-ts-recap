@@ -6,6 +6,8 @@ interface Post {
   body: string;
 }
 
+const apiURL = "https://jsonplaceholder.typicode.com/posts"
+
 const FetchPost = () => {
   const [posts, setPost] = useState<Post[]>([]);
   const [error, setError] = useState("");
@@ -13,9 +15,7 @@ const FetchPost = () => {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const response = await fetch(
-          "https://jsonplaceholder.typicode.com/posts"
-        );
+        const response = await fetch(apiURL);
 
         const data = await response.json();
 
