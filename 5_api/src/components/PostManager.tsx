@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import PostForm from "./PostForm";
 
 interface Posts {
   id: number;
@@ -27,6 +28,8 @@ const PostManager = () => {
 
   return (
     <>
+    <h1>Gerenciar posts</h1>
+    <PostForm />
       <h2>Postagens</h2>
       {posts.map((post) => (
         <div key={post.id}>
