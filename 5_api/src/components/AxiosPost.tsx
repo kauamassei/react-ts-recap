@@ -5,10 +5,10 @@ interface Agents {
   displayName: string;
   description: string;
   displayIcon: string;
-  fullPortrait: string
+  fullPortrait: string;
 }
 
-const apiURL = "https://valorant-api.com/v1/agents"
+const apiURL = "https://valorant-api.com/v1/agents";
 
 const AxiosPost = () => {
   const [posts, setPost] = useState<Agents[]>([]);
@@ -19,7 +19,7 @@ const AxiosPost = () => {
       try {
         const response = await axios.get(apiURL);
 
-        setPost(response.data.data)
+        setPost(response.data.data);
       } catch (error) {
         setError(String(error));
       }
@@ -50,7 +50,6 @@ const AxiosPost = () => {
                 width={300}
                 height={300}
               />
-
             </div>
           ))
         )}
