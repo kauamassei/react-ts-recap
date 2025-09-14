@@ -1,16 +1,24 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import type { Posts } from "./PostManager";
 
 const URL = "https://jsonplaceholder.typicode.com/posts";
 
 interface AddPost {
-  onSuccess: (post: Posts, operation:  "add" | "edit") => void;
+  post?: Posts | null;
+  onSuccess: (post: Posts, operation: "add" | "edit" | "update") => void;
 }
 
-const PostForm = ({ onSuccess }: AddPost) => {
-  const [title, setTitle] = useState("");
-  const [body, setBody] = useState("");
+const PostForm = ({ onSuccess, post }: AddPost) => {
+  const [title, setTitle] = useState(post?.title || "");
+  const [body, setBody] = useState(post?.body || "");
+
+  useEffect(() => {
+    if (post) {
+      setTitle(post.title);
+      setBody(post.body);
+    }
+  }, [post]);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -18,9 +26,21 @@ const PostForm = ({ onSuccess }: AddPost) => {
     const newPost = { title, body, userId: 1 };
 
     try {
-      const response = await axios.post(URL, newPost);
+      if (post) {
+        const response = await axios.put(
+          `https://jsonplaceholder.typicode.com/posts/${post.id}`,
+          newPost
+        );
 
-      onSuccess(response.data, "add");
+        onSuccess(response.data, "update");
+      } else {
+        const response = await axios.post(URL, newPost);
+
+        onSuccess(response.data, "add");
+      }
+
+      setTitle("");
+      setBody("");
     } catch (error) {
       console.log("Erro ao enviar postagem: ", error);
     }

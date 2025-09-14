@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import PostForm from "./PostForm";
 
@@ -15,9 +15,15 @@ const PostManager = () => {
   const [selectedPost, setSelectedPost] = useState<Posts | null>(null);
   const [isEditing, setIsEditing] = useState<boolean>(false);
 
-  const handleSuccess = (post: Posts, operation: "add" | "edit") => {
+  const handleSuccess = (post: Posts, operation: "add" | "edit" | 'update') => {
     if (operation === "add") {
       setPosts((currentPosts) => [post, ...currentPosts]);
+    } else if (operation === 'update') {
+      setPosts((currentPosts) =>
+        currentPosts.map((p) => (p.id === post.id ? post : p))
+      );
+      setIsEditing(false);
+      
     }
   };
 
@@ -47,7 +53,7 @@ const PostManager = () => {
   return (
     <>
       <h1>Gerenciar posts</h1>
-      <PostForm onSuccess={handleSuccess} />
+      <PostForm post={isEditing ? selectedPost : null} onSuccess={handleSuccess} />
       {isEditing && <button onClick={handleCancelEdit}>Cancelar edicao</button>}
       <h2>Postagens</h2>
       {posts.map((post) => (
