@@ -6,7 +6,10 @@ const URL = "https://jsonplaceholder.typicode.com/posts";
 
 interface AddPost {
   post?: Posts | null;
-  onSuccess: (post: Posts, operation: "add" | "edit" | "update") => void;
+  onSuccess: (
+    post: Posts,
+    operation: "add" | "edit" | "update" | "delete"
+  ) => void;
 }
 
 const PostForm = ({ onSuccess, post }: AddPost) => {
@@ -45,6 +48,22 @@ const PostForm = ({ onSuccess, post }: AddPost) => {
       console.log("Erro ao enviar postagem: ", error);
     }
   };
+
+  const handleDelete = async () => {
+    try {
+      if (post) {
+        const response = await axios.put(
+          `https://jsonplaceholder.typicode.com/posts/${post.id}`,
+        );
+
+        onSuccess(response.data, "delete");
+      }
+      setTitle("");
+      setBody("");
+    } catch (error) {
+      console.log("Erro ao enviar postagem: ", error);
+    }
+  };
   return (
     <>
       <div>
@@ -63,6 +82,12 @@ const PostForm = ({ onSuccess, post }: AddPost) => {
           ></textarea>
 
           <button type="submit">Enviar</button>
+
+          {post && (
+            <button type="button" onClick={handleDelete}>
+              Excluir
+            </button>
+          )}
         </form>
       </div>
     </>
