@@ -3,6 +3,7 @@ import "./App.css";
 import FetchPost from "./components/FetchPost";
 import AxiosPost from "./components/AxiosPost";
 import PostManager from "./components/PostManager";
+import PostLoader from "./components/PostLoader";
 
 function App() {
   return (
@@ -16,10 +17,17 @@ function App() {
       <div>
         <Link to='/posts'>Gerenciar posts</Link>
       </div>
+      <div>
+        <Link to='/post/1'>Carregar post 1</Link>
+      </div>
+      <div>
+        <Link to='/post/999'>Carregar post 999</Link>
+      </div>
       <Routes>
         <Route path="/fetchpost" element={<FetchPost />} />
         <Route path="/axiospost" element={<AxiosPost />} />
         <Route path="/posts" element={<PostManager />} />
+        <Route path="/post/:postId" element={<PostLoader />} />
       </Routes>
     </>
   );
