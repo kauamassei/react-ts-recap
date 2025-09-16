@@ -23,6 +23,9 @@ function App() {
       <div>
         <Link to='/post/999'>Carregar post 999</Link>
       </div>
+      <div>
+        <Link to='/post/2'>Carregar post 2</Link>
+      </div>
       <Routes>
         <Route path="/fetchpost" element={<FetchPost />} />
         <Route path="/axiospost" element={<AxiosPost />} />
