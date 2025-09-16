@@ -1,0 +1,34 @@
+import { useParams } from "react-router-dom";
+import useHttp from "../hooks/useHttp";
+
+const PostViewer = () => {
+  const { postId } = useParams();
+
+
+  const {
+    data: post,
+    error,
+    loading,
+  } = useHttp(
+    `https://jsonplaceholder.typicode.com/posts/${postId}`,
+    "GET",
+    null,
+    [postId]
+  );
+
+  return (
+    <>
+      <h1>Post: {postId}</h1>
+      {loading && <p>Carregando...</p>}
+      {error && <p style={{ color: "red" }}>{error}</p>}
+      {post && (
+        <div>
+          <h2>{post.id}</h2>
+          <p>{post.body}</p>
+        </div>
+      )}
+    </>
+  );
+};
+
+export default PostViewer;

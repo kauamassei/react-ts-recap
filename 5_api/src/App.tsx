@@ -4,6 +4,7 @@ import FetchPost from "./components/FetchPost";
 import AxiosPost from "./components/AxiosPost";
 import PostManager from "./components/PostManager";
 import PostLoader from "./components/PostLoader";
+import PostViewer from "./components/PostViewer";
 
 function App() {
   return (
@@ -15,22 +16,23 @@ function App() {
       </div>
       {/*req POST e UPDATE*/}
       <div>
-        <Link to='/posts'>Gerenciar posts</Link>
+        <Link to="/posts">Gerenciar posts</Link>
       </div>
       <div>
-        <Link to='/post/1'>Carregar post 1</Link>
+        <Link to="/post/1">Carregar post 1</Link>
       </div>
       <div>
-        <Link to='/post/999'>Carregar post 999</Link>
+        <Link to="/post/999">Carregar post 999</Link>
       </div>
       <div>
-        <Link to='/post/2'>Carregar post 2</Link>
+        <Link to="/post/view/2">Carregar post 2</Link>
       </div>
       <Routes>
         <Route path="/fetchpost" element={<FetchPost />} />
         <Route path="/axiospost" element={<AxiosPost />} />
         <Route path="/posts" element={<PostManager />} />
         <Route path="/post/:postId" element={<PostLoader />} />
+        <Route path="/post/view/:postId" element={<PostViewer />} />
       </Routes>
     </>
   );
