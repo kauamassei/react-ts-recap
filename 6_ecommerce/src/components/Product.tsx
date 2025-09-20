@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 export interface Products {
   id: number;
   name: string;
@@ -5,7 +7,11 @@ export interface Products {
   image: string;
 }
 
-const Product = ({ name, price, image }: Products) => {
+interface ProductProps extends Products {
+  onAddToCart: (product: Products, quantity: number) => void;
+}
+const Product = ({id, name, price, image, onAddToCart }: ProductProps) => {
+  const [quantity, setQuantity] = useState(1);
   return (
     <>
       <div className="product">
@@ -16,7 +22,9 @@ const Product = ({ name, price, image }: Products) => {
           <select>
             <option value="">1</option>
           </select>
-          <button>Adicionar ao carrinho</button>
+          <button onClick={() => onAddToCart({ id, name, price, image }, quantity)}>
+            Adicionar ao carrinho
+          </button>
         </div>
       </div>
     </>
