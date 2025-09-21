@@ -3,36 +3,36 @@
       "id": 1,
       "name": "Rel\u00f3gio Elegante",
       "price": 50.99,
-      "image": "https://source.unsplash.com/featured/?watch"
+      "image": "https://images.unsplash.com/photo-1434056886845-dac89ffe9b56?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
       "id": 2,
       "name": "C\u00e2mera Vintage",
       "price": 85.5,
-      "image": "https://source.unsplash.com/featured/?camera"
+      "image": "https://images.unsplash.com/photo-1520549233664-03f65c1d1327?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
       "id": 3,
       "name": "Fones de Ouvido",
       "price": 35.99,
-      "image": "https://source.unsplash.com/featured/?headphones"
+      "image": "https://plus.unsplash.com/premium_photo-1679513691474-73102089c117?q=80&w=1113&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
       "id": 4,
       "name": "T\u00eanis de Corrida",
       "price": 120.0,
-      "image": "https://source.unsplash.com/featured/?sneakers"
+      "image": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
       "id": 5,
       "name": "Smartphone",
       "price": 299.99,
-      "image": "https://source.unsplash.com/featured/?smartphone"
+      "image": "https://plus.unsplash.com/premium_photo-1680985551022-ad298e8a5f82?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
       "id": 6,
       "name": "Livro de Aventura",
       "price": 19.99,
-      "image": "https://source.unsplash.com/featured/?book"
+      "image": "https://plus.unsplash.com/premium_photo-1669652639337-c513cc42ead6?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     }
   ]

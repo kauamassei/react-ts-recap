@@ -5,6 +5,7 @@ import Catalog from "./pages/Catalog";
 import Cart from "./pages/Cart";
 import type { Products } from "./components/Product";
 import { useState } from "react";
+import Finished from "./pages/Finished";
 
 function App() {
   const [cartItems, setCartItems] = useState<
@@ -32,7 +33,8 @@ function App() {
       <div className="container">
         <Routes>
           <Route path="/" element={<Catalog onAddToCart={handleAddCart} />} />
-          <Route path="/cart" element={<Cart />} />
+          <Route path="/cart" element={<Cart cartItems={cartItems}  />} />
+          <Route path="/finished" element={<Finished />} />
         </Routes>
       </div>
     </div>
