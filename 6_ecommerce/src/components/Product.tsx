@@ -10,33 +10,36 @@ export interface Products {
 interface ProductProps extends Products {
   onAddToCart: (product: Products, quantity: number) => void;
 }
-const Product = (
-  { id, name, price, image, onAddToCart }: ProductProps,
-  e: React.FormEvent<HTMLFormElement>
-) => {
-  const [quantity, setQuantity] = useState(1);
+
+const Product = ({ id, name, price, image, onAddToCart }: ProductProps) => {
+  const [quantity, setQuantity] = useState<number>(1);
+
   return (
-    <>
-      <div className="product">
-        <img src={image} alt={name} />
-        <h3>{name}</h3>
-        <p>${price}</p>
-        <div className="cart-buttons">
-          <select>
-            {[...Array(10).keys()].map((x) => (
-              <option key={x + 1} value={x + 1}>
-                {x + 1}
-              </option>
-            ))}
-          </select>
-          <button
-            onClick={() => onAddToCart({ id, name, price, image }, quantity)}
-          >
-            Adicionar ao carrinho
-          </button>
-        </div>
+    <div className="product">
+      <img src={image} alt={name} />
+      <h3>{name}</h3>
+      <p>${price}</p>
+
+      <div className="cart-buttons">
+
+        <select
+          value={quantity}
+          onChange={(e) => setQuantity(Number(e.target.value))}
+        >
+          {[...Array(10).keys()].map((x) => (
+            <option key={x + 1} value={x + 1}>
+              {x + 1}
+            </option>
+          ))}
+        </select>
+
+        <button
+          onClick={() => onAddToCart({ id, name, price, image }, quantity)}
+        >
+          Adicionar ao carrinho
+        </button>
       </div>
-    </>
+    </div>
   );
 };
 

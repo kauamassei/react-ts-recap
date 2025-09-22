@@ -1,15 +1,16 @@
-import React from "react";
+import CartItem from "../components/CartItem";
 import type { Products } from "../components/Product";
 
-interface CartItem {
+interface CartItems {
   product: Products;
   quantity: number;
 }
 interface CartProps {
-  cartItems: CartItem[];
+  cartItems: CartItems[];
+  onUpdateCart: (product: Products, quantity: number) => void;
 }
 
-const Cart = ({ cartItems }: CartProps) => {
+const Cart = ({ cartItems, onUpdateCart }: CartProps) => {
   return (
     <>
       <div>
@@ -19,12 +20,7 @@ const Cart = ({ cartItems }: CartProps) => {
         ) : (
           <>
             {cartItems.map((item) => (
-              <div>
-                <h1>{item.product.name}</h1>
-                <p>Quantidade: {item.quantity}</p>
-              <p>Preço: R${item.product.price * item.quantity}</p>
-
-              </div>
+              <CartItem key={item.product.id} item={{...item.product, quantity: item.quantity}} onUpdateCart={onUpdateCart} />
             ))}
           </>
         )}
