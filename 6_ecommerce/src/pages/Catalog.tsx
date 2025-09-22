@@ -11,7 +11,7 @@ const Catalog = ({ onAddToCart }: CatalogProps) => {
     <>
     <div>
       <h1>Catálogo de produtos</h1>
-        <div className='products-container'>
+        <div className='product-container'>
           {productsData.map((product: Products) => (
             <Product key={product.id} {...product} onAddToCart={onAddToCart} />
           ))}

@@ -23,14 +23,14 @@ function App() {
       );
 
       if (itemExists) {
-        toast.info(`Quantidade do item ${product.name} atualizada.`)
+        toast.info(`Quantidade do item ${product.name} atualizada.`);
         return prevItems.map((item) =>
           item.product.id === product.id
             ? { ...item, quantity: item.quantity + quantity }
             : item
         );
       } else {
-        toast.success(`${product.name} adicionado com sucesso!`)
+        toast.success(`${product.name} adicionado com sucesso!`);
         return [...prevItems, { product, quantity }];
       }
     });

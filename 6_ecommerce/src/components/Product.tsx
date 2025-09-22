@@ -10,7 +10,10 @@ export interface Products {
 interface ProductProps extends Products {
   onAddToCart: (product: Products, quantity: number) => void;
 }
-const Product = ({id, name, price, image, onAddToCart }: ProductProps) => {
+const Product = (
+  { id, name, price, image, onAddToCart }: ProductProps,
+  e: React.FormEvent<HTMLFormElement>
+) => {
   const [quantity, setQuantity] = useState(1);
   return (
     <>
@@ -20,9 +23,15 @@ const Product = ({id, name, price, image, onAddToCart }: ProductProps) => {
         <p>${price}</p>
         <div className="cart-buttons">
           <select>
-            <option value="">1</option>
+            {[...Array(10).keys()].map((x) => (
+              <option key={x + 1} value={x + 1}>
+                {x + 1}
+              </option>
+            ))}
           </select>
-          <button onClick={() => onAddToCart({ id, name, price, image }, quantity)}>
+          <button
+            onClick={() => onAddToCart({ id, name, price, image }, quantity)}
+          >
             Adicionar ao carrinho
           </button>
         </div>
