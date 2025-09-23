@@ -1,4 +1,5 @@
 import CartItem from "../components/CartItem";
+import CheckoutButton from "../components/CheckoutButton";
 import type { Products } from "../components/Product";
 
 interface CartItems {
@@ -33,6 +34,7 @@ const Cart = ({ cartItems, onUpdateCart }: CartProps) => {
             ))}
             <div className="total">
               <p>Total: R${totalPrice}</p>
+              <CheckoutButton />
             </div>
           </>
         )}
