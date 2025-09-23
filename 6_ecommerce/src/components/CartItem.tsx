@@ -3,9 +3,10 @@ import type { Products } from "./Product";
 export interface CartItemProps {
     item: Products & {quantity: number};
     onUpdateCart: (item: Products, quantity: number) => void;
+    onRemoveFromCart: (product: Products) => void,
 }
 
-const CartItem = ({ item, onUpdateCart }: CartItemProps) => {
+const CartItem = ({ item, onUpdateCart, onRemoveFromCart }: CartItemProps) => {
   return (
     <>
       <div className="cart-item">
@@ -17,6 +18,7 @@ const CartItem = ({ item, onUpdateCart }: CartItemProps) => {
             value={item.quantity}
             onChange={(e) => onUpdateCart(item, Number(e.target.value))}
           />
+          <button onClick={() => onRemoveFromCart(item)}>Remover</button>
         </div>
       </div>
     </>

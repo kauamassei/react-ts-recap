@@ -10,9 +10,10 @@ interface CartItems {
 interface CartProps {
   cartItems: CartItems[];
   onUpdateCart: (product: Products, quantity: number) => void;
+  onRemoveFromCart: (product: Products) => void,
 }
 
-const Cart = ({ cartItems, onUpdateCart }: CartProps) => {
+const Cart = ({ cartItems, onUpdateCart, onRemoveFromCart }: CartProps) => {
   const totalPrice = cartItems.reduce(
     (total, item) => total + item.price * item.quantity,
     0
@@ -30,6 +31,7 @@ const Cart = ({ cartItems, onUpdateCart }: CartProps) => {
                 key={item.product.id}
                 item={{ ...item.product, quantity: item.quantity }}
                 onUpdateCart={onUpdateCart}
+                onRemoveFromCart={onRemoveFromCart}
               />
             ))}
             <div className="total">

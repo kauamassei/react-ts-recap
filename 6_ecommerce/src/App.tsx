@@ -45,6 +45,13 @@ function App() {
     });
   };
 
+  const handleRemoveFromCart = (product: Products) => {
+    toast.error(`${product.name} foi removido do carrinho`);
+    setCartItems((prevItems) =>
+      prevItems.filter((item) => item.product.id !== product.id)
+    );
+  };
+
   return (
     <div>
       <Navbar />
@@ -55,11 +62,12 @@ function App() {
             path="/cart"
             element={
               <Cart
-                cartItems={cartItems.map(item => ({
+                cartItems={cartItems.map((item) => ({
                   ...item,
-                  price: item.product.price
+                  price: item.product.price,
                 }))}
                 onUpdateCart={handleUpdateCart}
+                onRemoveFromCart={handleRemoveFromCart}
               />
             }
           />
