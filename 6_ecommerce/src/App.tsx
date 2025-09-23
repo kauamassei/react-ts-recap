@@ -54,7 +54,13 @@ function App() {
           <Route
             path="/cart"
             element={
-              <Cart cartItems={cartItems} onUpdateCart={handleUpdateCart} />
+              <Cart
+                cartItems={cartItems.map(item => ({
+                  ...item,
+                  price: item.product.price
+                }))}
+                onUpdateCart={handleUpdateCart}
+              />
             }
           />
           <Route path="/finished" element={<Finished />} />

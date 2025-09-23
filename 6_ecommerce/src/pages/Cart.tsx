@@ -4,6 +4,7 @@ import type { Products } from "../components/Product";
 interface CartItems {
   product: Products;
   quantity: number;
+  price: number
 }
 interface CartProps {
   cartItems: CartItems[];
@@ -11,6 +12,10 @@ interface CartProps {
 }
 
 const Cart = ({ cartItems, onUpdateCart }: CartProps) => {
+  const totalPrice = cartItems.reduce(
+    (total, item) => total + item.price * item.quantity,
+    0
+  );
   return (
     <>
       <div>
@@ -20,8 +25,15 @@ const Cart = ({ cartItems, onUpdateCart }: CartProps) => {
         ) : (
           <>
             {cartItems.map((item) => (
-              <CartItem key={item.product.id} item={{...item.product, quantity: item.quantity}} onUpdateCart={onUpdateCart} />
+              <CartItem
+                key={item.product.id}
+                item={{ ...item.product, quantity: item.quantity }}
+                onUpdateCart={onUpdateCart}
+              />
             ))}
+            <div className="total">
+              <p>Total: R${totalPrice}</p>
+            </div>
           </>
         )}
       </div>
