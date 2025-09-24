@@ -13,7 +13,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   const [cartItems, setCartItems] = useState<
-    { product: Products; quantity: number }[]
+    { product: Products; quantity: number; price: number }[]
   >([]);
 
   const handleAddCart = (product: Products, quantity: number) => {
@@ -31,7 +31,7 @@ function App() {
         );
       } else {
         toast.success(`${product.name} adicionado com sucesso!`);
-        return [...prevItems, { product, quantity }];
+        return [...prevItems, { product, quantity, price: product.price }];
       }
     });
   };
@@ -68,14 +68,7 @@ function App() {
                 }))}
                 onUpdateCart={handleUpdateCart}
                 onRemoveFromCart={handleRemoveFromCart}
-                onCheckout={() => {
-                  if (cartItems.length > 0) {
-                      toast.success('Compra finalizada com suecsso')
-                      setCartItems([])
-                  } else {
-                    toast.error('Seu carrinho está vazio')
-                  }
-                }}
+                setCartItems={setCartItems}
               />
             }
           />

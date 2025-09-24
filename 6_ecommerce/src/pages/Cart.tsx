@@ -11,19 +11,21 @@ interface CartProps {
   cartItems: CartItems[];
   onUpdateCart: (product: Products, quantity: number) => void;
   onRemoveFromCart: (product: Products) => void;
-  onCheckout: (product: Products) => void;
+  setCartItems: React.Dispatch<React.SetStateAction<CartItems[]>>;
 }
 
 const Cart = ({
   cartItems,
+  setCartItems,
   onUpdateCart,
   onRemoveFromCart,
-  onCheckout,
+
 }: CartProps) => {
   const totalPrice = cartItems.reduce(
     (total, item) => total + item.price * item.quantity,
     0
   );
+  
   return (
     <>
       <div>
@@ -44,7 +46,7 @@ const Cart = ({
             ))}
             <div className="total">
               <p>Total: R${totalPrice}</p>
-              <CheckoutButton onCheckout={onCheckout} />
+              <CheckoutButton cartItems={cartItems} setCartItems={setCartItems} />
             </div>
           </>
         )}
