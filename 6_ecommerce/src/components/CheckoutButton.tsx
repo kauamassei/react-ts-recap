@@ -1,9 +1,14 @@
-import React from "react";
 
-const CheckoutButton = () => {
+import type { Products } from "./Product";
+
+interface CartProps {
+  onCheckout: (product: Products) => void,
+}
+
+const CheckoutButton = ({onCheckout}: CartProps) => {
   return (
     <>
-      <button>Finalizar compra</button>
+      <button onClick={() => onCheckout({} as Products)}>Finalizar compra</button>
     </>
   );
 };

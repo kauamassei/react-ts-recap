@@ -68,6 +68,14 @@ function App() {
                 }))}
                 onUpdateCart={handleUpdateCart}
                 onRemoveFromCart={handleRemoveFromCart}
+                onCheckout={() => {
+                  if (cartItems.length > 0) {
+                      toast.success('Compra finalizada com suecsso')
+                      setCartItems([])
+                  } else {
+                    toast.error('Seu carrinho está vazio')
+                  }
+                }}
               />
             }
           />
