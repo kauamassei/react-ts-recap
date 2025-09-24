@@ -40,7 +40,7 @@ function App() {
     toast.info(`Quantidade do item ${product.name} atualizada.`);
     setCartItems((prevItems) => {
       return prevItems.map((item) =>
-        item.product.id === product.id ? { ...item, quantity: +quantity } : item
+        item.product.id === product.id ? { ...item, quantity: + quantity } : item
       );
     });
   };

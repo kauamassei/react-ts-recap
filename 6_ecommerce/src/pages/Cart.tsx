@@ -2,7 +2,7 @@ import CartItem from "../components/CartItem";
 import CheckoutButton from "../components/CheckoutButton";
 import type { Products } from "../components/Product";
 
-interface CartItems {
+export interface CartItems {
   product: Products;
   quantity: number;
   price: number;

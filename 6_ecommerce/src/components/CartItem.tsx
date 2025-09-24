@@ -15,6 +15,7 @@ const CartItem = ({ item, onUpdateCart, onRemoveFromCart }: CartItemProps) => {
         <div className="cart-buttons">
           <input
             type="number"
+            min={1}
             value={item.quantity}
             onChange={(e) => onUpdateCart(item, Number(e.target.value))}
           />
