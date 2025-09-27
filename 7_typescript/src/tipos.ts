@@ -40,10 +40,50 @@ let user: { name: string; age: number } = {
   age: 18,
 };
 
+console.log(typeof user);
 console.log(user);
 
 // tuplas
 
 let rgb: [number, number, number] = [255, 0, 0];
 
+console.log(typeof rgb);
 console.log(rgb);
+
+// funcoes
+const nome = (name: string) => {
+  return `Olá ${name}!`;
+};
+
+console.log(nome("Kauã"));
+
+// enum
+
+enum Direction {
+  Up,
+  Down,
+  Left,
+  Right,
+  Diagonal,
+}
+
+const getDirectionMessage = (direction: Direction) => {
+  switch (direction) {
+    case Direction.Up:
+      return "Movendo para cima";
+    case Direction.Down:
+      return "Movendo para baixo";
+    case Direction.Left:
+      return "Movendo para esquerda";
+    case Direction.Right:
+      return "Movendo para direita";
+    default:
+      return "Ficou parado";
+  }
+};
+
+console.log(getDirectionMessage(Direction.Up));
+console.log(getDirectionMessage(Direction.Down));
+console.log(getDirectionMessage(Direction.Left));
+console.log(getDirectionMessage(Direction.Right));
+console.log(getDirectionMessage(Direction.Diagonal));
