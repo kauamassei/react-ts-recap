@@ -34,3 +34,24 @@ const fruits = ["Morango", "Banana", "Uva"];
 
 console.log(firstElement(fruits));
 
+// Exercício 3
+
+interface Product {
+  id: number;
+  name: string;
+  price: number;
+}
+
+const freezeProduct = (product: Product): Readonly<Product> => {
+  return product;
+};
+
+const updateProductPrice = (product: Product, newPrice: number): Product => {
+    return {...product, price: newPrice};
+}
+
+const bread: Product = {id: 1, name: 'Pão', price: 2.99};
+const frozenBread = freezeProduct(bread);
+
+const updateBread = updateProductPrice(bread, 3.49);
+console.log(updateBread)

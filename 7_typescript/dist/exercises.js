@@ -16,3 +16,13 @@ const newNumbers = [1, 2, 3];
 console.log(firstElement(newNumbers));
 const fruits = ["Morango", "Banana", "Uva"];
 console.log(firstElement(fruits));
+const freezeProduct = (product) => {
+    return product;
+};
+const updateProductPrice = (product, newPrice) => {
+    return Object.assign(Object.assign({}, product), { price: newPrice });
+};
+const bread = { id: 1, name: 'Pão', price: 2.99 };
+const frozenBread = freezeProduct(bread);
+const updateBread = updateProductPrice(bread, 3.49);
+console.log(updateBread);
