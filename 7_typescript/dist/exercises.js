@@ -22,7 +22,7 @@ const freezeProduct = (product) => {
 const updateProductPrice = (product, newPrice) => {
     return Object.assign(Object.assign({}, product), { price: newPrice });
 };
-const bread = { id: 1, name: 'Pão', price: 2.99 };
+const bread = { id: 1, name: "Pão", price: 2.99 };
 const frozenBread = freezeProduct(bread);
 const updateBread = updateProductPrice(bread, 3.49);
 console.log(updateBread);

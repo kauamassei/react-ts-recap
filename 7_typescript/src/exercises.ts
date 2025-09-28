@@ -47,11 +47,11 @@ const freezeProduct = (product: Product): Readonly<Product> => {
 };
 
 const updateProductPrice = (product: Product, newPrice: number): Product => {
-    return {...product, price: newPrice};
-}
+  return { ...product, price: newPrice };
+};
 
-const bread: Product = {id: 1, name: 'Pão', price: 2.99};
+const bread: Product = { id: 1, name: "Pão", price: 2.99 };
 const frozenBread = freezeProduct(bread);
 
 const updateBread = updateProductPrice(bread, 3.49);
-console.log(updateBread)
+console.log(updateBread);
