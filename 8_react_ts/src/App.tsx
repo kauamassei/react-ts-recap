@@ -3,6 +3,7 @@ import Counter from "./components/Counter";
 import Greeting from "./components/Greeting";
 import TextInput from "./components/TextInput";
 import Cart from "./exercises/Cart";
+import LoginForm from "./exercises/LoginForm";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Counter />
       <TextInput />
       <Cart />
+      <LoginForm />
     </>
   );
 }
