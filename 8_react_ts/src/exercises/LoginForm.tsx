@@ -7,9 +7,6 @@ const LoginForm = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-  };
-
-  const aviso = () => {
     alert(`Usuário: ${name} - Senha: ${password}`);
   };
 
@@ -33,9 +30,7 @@ const LoginForm = () => {
           }
         />
       </form>
-      <button onClick={aviso} type="submit">
-        Login
-      </button>
+      <button type="submit">Login</button>
     </>
   );
 };
