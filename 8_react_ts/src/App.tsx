@@ -1,5 +1,6 @@
 import "./App.css";
 import Counter from "./components/Counter";
+import CounterInterval from "./components/CounterInterval";
 import Greeting from "./components/Greeting";
 import TextInput from "./components/TextInput";
 import Cart from "./exercises/Cart";
@@ -14,6 +15,7 @@ function App() {
       <TextInput />
       <Cart />
       <LoginForm />
+      <CounterInterval />
     </>
   );
 }
