@@ -1,9 +1,18 @@
-
+import { useState } from "react";
+import useInterval from "../hooks/useInterval";
 
 const CounterInterval = () => {
-  return (
-    <div>CounterInterval</div>
-  )
-}
+  const [counter, setCounter] = useState(0);
 
-export default CounterInterval
+  useInterval(() => {
+    setCounter(counter + 1);
+  }, 5000);
+
+  return (
+    <>
+      <h1>{counter}</h1>
+    </>
+  );
+};
+
+export default CounterInterval;
