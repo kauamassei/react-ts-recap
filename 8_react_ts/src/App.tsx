@@ -4,6 +4,7 @@ import CounterInterval from "./components/CounterInterval";
 import Greeting from "./components/Greeting";
 import TextInput from "./components/TextInput";
 import Cart from "./exercises/Cart";
+import ItemStorage from "./exercises/ItemStorage";
 import LoginForm from "./exercises/LoginForm";
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
       <Cart />
       <LoginForm />
       <CounterInterval />
+      <ItemStorage />
     </>
   );
 }
