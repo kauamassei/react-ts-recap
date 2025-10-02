@@ -1,4 +1,5 @@
 import "./App.css";
+import Counter from "./components/Counter";
 import ShoppingList from "./components/ShoppingList";
 import UserCard from "./components/UserCard";
 
@@ -12,6 +13,7 @@ function App() {
     <>
       <UserCard name="Kauã" age={18} isAdmin={false} />
       <ShoppingList products={products} />
+      <Counter />
     </>
   );
 }
