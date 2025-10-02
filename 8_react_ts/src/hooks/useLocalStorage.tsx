@@ -31,6 +31,7 @@ export function useLocalStorage<T>(
   // Efeito que roda apenas na montagem do componente
   useEffect(() => {
     setValue(storedValue); // garante que o estado inicial também vá para o localStorage
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []); // [] -> executa só uma vez, no mount
 
   // Retorna o valor atual e a função de atualização
