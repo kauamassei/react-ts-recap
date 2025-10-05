@@ -17,7 +17,9 @@ const ToDoList = () => {
       text: newTask,
       done: false,
     };
+    
     console.log("Task adicionada");
+
     setTasks([...tasks, task]);
 
     setNewTask("");
