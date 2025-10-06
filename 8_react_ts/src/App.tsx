@@ -3,6 +3,7 @@ import Contador from "./components/Contador";
 import Counter from "./components/Counter";
 // import CounterInterval from "./components/CounterInterval";
 import Greeting from "./components/Greeting";
+import PostFetch from "./components/PostFetch";
 import TextInput from "./components/TextInput";
 import Theme from "./components/Theme";
 import { TemaProvider } from "./contexts/TemaContext";
@@ -25,6 +26,7 @@ function App() {
       <TemaProvider>
         <Theme />
       </TemaProvider>
+      <PostFetch />
     </>
   );
 }
