@@ -6,12 +6,14 @@ import { Formik, Field, Form } from "formik";
 
 import { esquemaValidacao } from "../schemas/validationSchema";
 
+import styles from "./CalculadoraChurrasco.module.css";
+
 const CalculadoraChurrasco = () => {
   const navigate = useNavigate();
 
   return (
     <>
-      <div>
+      <div className={styles.container}>
         <Formik
           onSubmit={(values) => {
             navigate("/resultado", {
@@ -27,11 +29,13 @@ const CalculadoraChurrasco = () => {
         >
           {({ errors, touched }) => (
             <Form>
-              <div>
-                <label htmlFor="pessoas">Número de pessoas</label>
+              <div className={styles.inputGroup}>
+                <label htmlFor="pessoas" className={styles.inputLabel}>
+                  Número de pessoas
+                </label>
                 <Field name="pessoas" type="number" />
                 {errors.pessoas && touched.pessoas ? (
-                  <p>{errors.pessoas}</p>
+                  <p className={styles.error}>{errors.pessoas}</p>
                 ) : null}
               </div>
               <h2>Selecione os alimentos para o churrasco:</h2>
@@ -41,6 +45,7 @@ const CalculadoraChurrasco = () => {
                     type="checkbox"
                     name="selecaoAlimentos"
                     value={alimento}
+                    className={styles.inputField}
                   />
                   <label htmlFor="selecaoAlimentos">
                     {nomeAlimentos[alimento]}
@@ -48,9 +53,11 @@ const CalculadoraChurrasco = () => {
                 </div>
               ))}
               {errors.selecaoAlimentos && touched.selecaoAlimentos ? (
-                <p>{errors.selecaoAlimentos}</p>
+                <p className={styles.error}>{errors.selecaoAlimentos}</p>
               ) : null}
-              <button type="submit">Calcular</button>
+              <button type="submit" className={styles.calculateButton}>
+                Calcular
+              </button>
             </Form>
           )}
         </Formik>

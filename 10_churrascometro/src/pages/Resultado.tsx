@@ -1,9 +1,6 @@
-import React from 'react'
 
 const Resultado = () => {
-  return (
-    <div>Resultado</div>
-  )
-}
+  return <div className="page-container">Resultado</div>;
+};
 
-export default Resultado
+export default Resultado;
