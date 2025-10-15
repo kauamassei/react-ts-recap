@@ -1,8 +1,20 @@
+import Foto from "./Foto"
 
+type FotoListProps = {
+  foto: {
+    
+  }
+}
 
-const FotoList = () => {
+const FotoList = ({foto}: FotoListProps) => {
   return (
-    <div>FotoList</div>
+    <>
+    <div className="album">
+      {foto.map((foto) => (
+        <Foto />
+      ))}
+    </div>
+    </>
   )
 }
 
