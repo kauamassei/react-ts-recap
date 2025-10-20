@@ -18,7 +18,7 @@ const Home = () => {
 
     if (res.status === 404) {
       setError(true);
-      return
+      return;
     }
 
     const { avatar_url, login, location, followers, following } = data;
