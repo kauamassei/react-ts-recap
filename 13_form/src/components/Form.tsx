@@ -26,6 +26,95 @@ const Form = () => {
           <small className="text-red-500 italic">{errors.name.message}</small>
         )}
       </div>
+      <div className="flex flex-col gap-2 mb-2">
+        <label htmlFor="lastName">Sobrenome:</label>
+        <input
+          type="text"
+          id="lastName"
+          placeholder="Digite seu sobrenome"
+          {...register("lastName")}
+          className="h-10 pl-2 rounded-md border border-slate-300"
+        />
+        {errors.lastName && (
+          <small className="text-red-500 italic">
+            {errors.lastName.message}
+          </small>
+        )}
+      </div>
+      <div className="flex flex-col gap-2 mb-2">
+        <label htmlFor="gender">Gênero:</label>
+        <select
+          id="gender"
+          {...register("gender")}
+          className="h-10 pl-1 rounded-md border border-slate-300"
+        >
+          <option value="select">Selecione</option>
+          <option value="female">Feminino</option>
+          <option value="male">Masculino</option>
+          <option value="other">Outro</option>
+        </select>
+        {errors.gender && (
+          <small className="text-red-500 italic">{errors.gender.message}</small>
+        )}
+      </div>
+      <div className="flex flex-col gap-2 mb-2">
+        <label htmlFor="email">Email:</label>
+        <input
+          type="text"
+          id="email"
+          placeholder="Digite seu email"
+          {...register("email")}
+          className="h-10 pl-2 rounded-md border border-slate-300"
+        />
+        {errors.email && (
+          <small className="text-red-500 italic">{errors.email.message}</small>
+        )}
+      </div>
+      <div className="flex flex-col gap-2 mb-2">
+        <label htmlFor="password">Senha:</label>
+        <input
+          type="password"
+          id="password"
+          placeholder="Digite sua senha"
+          {...register("password")}
+          className="h-10 pl-2 rounded-md border border-slate-300"
+        />
+        {errors.password && (
+          <small className="text-red-500 italic">
+            {errors.password.message}
+          </small>
+        )}
+      </div>
+      <div className="flex flex-col gap-2 mb-2">
+        <label htmlFor="confirmPassword">Confirme sua senha:</label>
+        <input
+          type="password"
+          id="confirmPassword"
+          placeholder="Confirme sua senha"
+          {...register("confirmPassword")}
+          className="h-10 pl-2 rounded-md border border-slate-300"
+        />
+        {errors.confirmPassword && (
+          <small className="text-red-500 italic">
+            {errors.confirmPassword.message}
+          </small>
+        )}
+      </div>
+      <div className="flex flex-col gap-2 mb-2">
+        <div className="flex gap-2">
+          <input
+            type="checkbox"
+            id="agree"
+            placeholder="Confirme sua senha"
+            {...register("agree")}
+          />
+          <label htmlFor="agree">Confirme sua senha:</label>
+        </div>
+
+        {errors.agree && (
+          <small className="text-red-500 italic">{errors.agree.message}</small>
+        )}
+      </div>
       <button
         type="submit"
         className="w-full h-11 bg-cyan-400 rounded-md my-2 hover:bg-cyan-500 transition-all"

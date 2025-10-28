@@ -3,7 +3,7 @@ import { z } from "zod";
 export const formSchema = z
   .object({
     name: z.string().min(3, "O número mínimo de caracteres é 3."),
-    lastName: z.string().min(3, "O npumero mínimo de caracteres é 3."),
+    lastName: z.string().min(3, "O número mínimo de caracteres é 3."),
     gender: z.string().refine((field) => field !== "select", {
       message: "Você precisa scolher um gênero",
     }),
